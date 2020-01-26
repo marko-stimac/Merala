@@ -1,0 +1,51 @@
+// import css/scss
+/* const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
+module.exports = withCSS(withSass()); */
+
+// Za npm run analyze
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true'
+});
+module.exports = withBundleAnalyzer({});
+
+// Za build
+const fetch = require('isomorphic-unfetch');
+
+const apiUrl = 'https://wordpress.org/news/wp-json/wp/v2/';
+
+let res;
+let posts;
+
+module.exports = {
+	exportTrailingSlash: true,
+	exportPathMap: async function() {
+		const paths = {
+			'/': { page: '/' },
+			'/blog': { page: '/blog' }
+		};
+
+		// Posts
+		res = await fetch(`${apiUrl}posts`);
+		posts = await res.json();
+		posts.forEach(post => {
+			paths[`/blog/${post.slug}`] = {
+				page: '/blog/[slug]',
+				query: { slug: post.slug }
+			};
+		});
+
+		// Pages
+		res = await fetch(`${apiUrl}pages`);
+		posts = await res.json();
+		posts.forEach(post => {
+			paths[`/${post.slug}`] = {
+				page: '[slug]',
+				query: { slug: post.slug }
+			};
+		});
+
+		return paths;
+	},
+	poweredByHeader: false
+};
