@@ -28,9 +28,10 @@ function paginator(arr, currentPage) {
 	// Create array or values from results
 	let data = [...nextPages, currentPage, ...prevPages];
 	// Remove duplicates and sort values
-	data = data.sort().filter(function(elem, index, arr) {
+	data = data.sort((a,b) => a - b).filter(function(elem, index, arr) {
 		return index == arr.length - 1 || arr[index + 1] != elem;
 	});
+	console.log(data);
 	// Prepare HTML
 	const pages = data.map(page => {
 		if (page !== currentPage) {
