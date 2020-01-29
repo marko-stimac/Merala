@@ -6,7 +6,7 @@ import HTMLHead from '../../components/layout/Head';
 import Layout from '../../components/layout/Layout';
 import Intro from '../../components/Intro';
 import LoopPost from '../../components/LoopPost';
-import Pagination from '../../components/Pagination';
+import Pagination from '../../components/pagination/';
 import Content from '../../components/Content';
 
 const fetcher = async function(...args) {

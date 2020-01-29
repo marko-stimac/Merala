@@ -1,6 +1,6 @@
 export default function() {
 	return (
-		<svg width="40" height="40" viewBox="0 0 25 25">
+		<svg width="40" height="40" viewBox="0 0 25 25" aria-hidden="true">
 			<g fill="none" fillRule="evenodd">
 				<path
 					d="M20.66 12.693c0-.603-.054-1.182-.155-1.738H12.5v3.287h4.575a3.91 3.91 0 0 1-1.697 2.566v2.133h2.747c1.608-1.48 2.535-3.65 2.535-6.24z"

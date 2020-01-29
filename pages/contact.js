@@ -7,7 +7,7 @@ import Intro from '../components/Intro';
 import ContactForm from '../components/ContactForm';
 import Content from '../components/Content';
 
-const Post = () => {
+const Contact = () => {
 	return (
 		<>
 			<HTMLHead
@@ -36,7 +36,7 @@ const Post = () => {
 	);
 };
 
-Post.getInitialProps = async () => {
+Contact.getInitialProps = async () => {
 	const res = await fetch(`${process.env.APIURL}/pages/?slug=contact`);
 	const post = await res.json();
 	return {
@@ -44,4 +44,4 @@ Post.getInitialProps = async () => {
 	};
 };
 
-export default Post;
+export default Contact;

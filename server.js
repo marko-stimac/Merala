@@ -29,15 +29,22 @@ app.prepare().then(() => {
 
 	// Regular pages
 	server.get('/:slug', (req, res) => {
-		let queryParams = { slug: req.params.slug };
 		let pagePath = '/';
+		let queryParams = { slug: req.params.slug };
 		return ssrCache({ req, res, pagePath, queryParams });
 	});
 
 	// Blog posts
 	server.get('/blog/:slug', (req, res) => {
-		let queryParams = { slug: req.params.slug };
 		let pagePath = '/blog';
+		let queryParams = { slug: req.params.slug };
+		return ssrCache({ req, res, pagePath, queryParams });
+	});
+
+	// Blog pagination 
+	server.get('/blog/:id', (req, res) => {
+		let pagePath = '/blog';
+		let queryParams = { id: req.params.id };
 		return ssrCache({ req, res, pagePath, queryParams });
 	});
 		

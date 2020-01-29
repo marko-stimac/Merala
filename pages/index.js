@@ -10,7 +10,7 @@ export default function Index() {
 			<Layout>
 				<Intro title="Homepage title" desc="Testing SSR with Next.js"/>
 				<Content>
-					Homepage
+					<p>Homepage</p>
 				</Content>
 			</Layout>
 		</>

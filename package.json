@@ -1,9 +1,11 @@
 {
-  "name": "hello-next",
+  "name": "ssr-playground",
   "version": "1.0.0",
   "scripts": {
     "start": "cross-env NODE_ENV=development && next build && node server.js",
     "build": "cross-env NODE_ENV=production && next build",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
@@ -31,6 +33,10 @@
   },
   "devDependencies": {
     "babel-plugin-transform-define": "^2.0.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.12.0"
   }
 }

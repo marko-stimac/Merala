@@ -1,5 +1,5 @@
 export default () => {
-	return (<svg width="30" height="30" viewBox="0 0 512 512">
+	return (<svg width="30" height="30" viewBox="0 0 512 512" aria-hidden="true">
 			<path
 				fill="#fff"
 				d="M256,103.278c-39.429,0-71.505,32.077-71.505,71.505c0,39.429,32.077,71.505,71.505,71.505
